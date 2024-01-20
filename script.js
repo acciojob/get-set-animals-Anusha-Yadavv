@@ -1,45 +1,44 @@
-//complete this code
 class Animal {
-  constructor(name) {
-    this._name = name;
+  constructor(species) {
+    this._species = species;
   }
 
-  get name() {
-    return this._name;
+  get species() {
+    return this._species;
   }
 
   makeSound() {
-    console.log(`${this.name} makes a sound`);
+    console.log(`${this.species} makes a sound`);
+  }
+}
+
+class Cat extends Animal {
+  purr() {
+    console.log("purr");
   }
 }
 
 class Dog extends Animal {
   bark() {
-    console.log(`${this.name} barks`);
-  }
-}
-
-class Cat extends Animal {
-  meow() {
-    console.log(`${this.name} meows`);
+    console.log("woof");
   }
 }
 
 // Example usage:
 
 // Creating an instance of the Animal class
-const genericAnimal = new Animal("Generic Animal");
-console.log(`Animal: ${genericAnimal.name}`);
+const genericAnimal = new Animal("Generic Species");
+console.log(`Animal: ${genericAnimal.species}`);
 genericAnimal.makeSound();
 
+// Creating an instance of the Cat class
+const cat = new Cat("Domestic Cat");
+console.log(`Cat: ${cat.species}`);
+cat.makeSound();
+cat.purr();
+
 // Creating an instance of the Dog class
-const dog = new Dog("Buddy");
-console.log(`Dog: ${dog.name}`);
+const dog = new Dog("Golden Retriever");
+console.log(`Dog: ${dog.species}`);
 dog.makeSound();
 dog.bark();
-
-// Creating an instance of the Cat class
-const cat = new Cat("Whiskers");
-console.log(`Cat: ${cat.name}`);
-cat.makeSound();
-cat.meow();
